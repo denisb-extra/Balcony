@@ -1,0 +1,130 @@
+$tab-w: 1200px;
+$mob-w: 920px;
+$small-w: 500px;
+
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+/* Fonts */
+@font-face { 
+  	font-family: 'rubik-regular'; 
+  	src: url('../fonts/Rubik-Regular.ttf') format('truetype'); 
+} 
+@mixin f-r {
+	font-family: 'rubik-regular';
+	font-weight: normal;
+}
+
+@font-face { 
+  	font-family: 'rubik-light'; 
+  	src: url('../fonts/Rubik-Light.ttf') format('truetype'); 
+} 
+@mixin f-l {
+	font-family: 'rubik-light';
+	font-weight: normal;
+}
+
+@font-face { 
+  	font-family: 'rubik-bold'; 
+  	src: url('../fonts/Rubik-Bold.ttf') format('truetype'); 
+} 
+@mixin f-b {
+	font-family: 'rubik-bold';
+}
+
+@font-face { 
+  	font-family: 'rubik-medium'; 
+  	src: url('../fonts/Rubik-Medium.ttf') format('truetype'); 
+} 
+@mixin f-m {
+	font-family: 'rubik-medium';
+}
+/* /Fonts */
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+	position: relative;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  	font-size: 0;
+  	padding-top: 100px;
+  	@media only screen and (max-width : 1300px) {
+  		padding-top: 80px;
+  	}
+  	@media only screen and (max-width : 1000px) {
+  		padding-top: 50px;
+  	}
+  	@media only screen and (max-width : 600px) {
+  		padding-top: 50px;
+  	}
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  direction: rtl;
+ 
+}
+
+p {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+section {
+	width: 100%;
+	max-width: 1920px;
+	margin: auto;	
+	overflow: hidden;
+}
+
+.section-inner {
+	width: 100%;
+	margin: auto;
+	padding: 0 10px;
+}
+
+
+
+@import 'owl/owl.carousel';
+/* --------------------- /Owl carousel ---------------------- */
+@import 'jquery-ui';
+@import 'wp';
+@import 'index';
+@import 'inner';
